@@ -1,0 +1,10 @@
+/* AppBar */
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   padding: 16px 76px;
+   gap: 241px;
+
+}
