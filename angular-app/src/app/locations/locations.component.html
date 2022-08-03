@@ -1,8 +1,15 @@
 <div class="row">
-    <div class="col-xs-10">
+    <div class="col">
         <hr>
-        <p>Locations guests love!</p>
-        <a href="#">Accomodation details</a>
-        <!-- <app-accomodation-details></app-accomodation-details> -->
+        
+        <div class="pull-left">
+            <a href="#">Accomodation details</a>
+        </div>
+        
+            <app-location-box [locationInput]="locationItem" (locationOutput)="onItemRecived($event)" ></app-location-box>
+       
+        
+        
+        
     </div>
 </div>

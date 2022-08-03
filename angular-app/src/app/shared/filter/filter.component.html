@@ -1,0 +1,32 @@
+<div class="component">
+    <div class="row">
+        <div class="col">
+            <ng-select [(ngModel)]="selectedlocation">
+                <ng-option *ngFor="let location of locations" [value]="location.id">{{location.name}}</ng-option>
+             </ng-select>
+             <ng-select [items]="locations" 
+               bindLabel="name" 
+               bindValue="id" 
+               [(ngModel)]="selectedlocation">
+            </ng-select>
+        </div>
+        
+        
+        <div class="col">
+            <input type="date">
+        </div>
+        <div class="col">
+            <input type="date">
+        </div>
+        <div class="col">
+            <input type="number">
+        </div>
+        <div class="col">
+            <input type="text">
+        </div>
+        <div id="button" class="col">
+            <button> Search</button>
+        </div>
+        
+    </div>
+</div>
