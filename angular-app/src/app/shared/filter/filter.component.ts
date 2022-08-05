@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterComponent implements OnInit {
   selectedlocation: number | undefined;
+  type: number | undefined;
   constructor() { }
   
 
@@ -16,6 +17,12 @@ export class FilterComponent implements OnInit {
         { id: 3, name: 'Dubrovnik' },
         { id: 4, name: 'Pula' },
     ];
+    types = [
+      { id: 1, name: 'Room' },
+      { id: 2, name: 'MobileHome' },
+      { id: 3, name: 'Apartment' },
+      
+  ];
   ngOnInit(): void {
   }
 

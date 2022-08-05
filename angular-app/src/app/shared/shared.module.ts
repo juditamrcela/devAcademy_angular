@@ -5,6 +5,13 @@ import { AccomodationBoxComponent } from './accomodation-box/accomodation-box.co
 import { FormsModule } from '@angular/forms';
 import { FilterComponent } from './filter/filter.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatCardModule } from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -15,7 +22,14 @@ import { NgSelectModule } from '@ng-select/ng-select';
   imports: [
     CommonModule,
     NgSelectModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatIconModule
   ],
   exports:[ 
     LocationBoxComponent,

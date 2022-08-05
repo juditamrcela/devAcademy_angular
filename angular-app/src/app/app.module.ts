@@ -13,6 +13,8 @@ import { AccommodationComponent } from './accommodation/accommodation.component'
 import { MyPlacesComponent } from './my-places/my-places.component';
 import { MyBookingComponent } from './my-booking/my-booking.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,13 +27,15 @@ import { NgSelectModule } from '@ng-select/ng-select';
     AccomodationDetailsComponent,
     AccommodationComponent,
     MyPlacesComponent,
-    MyBookingComponent
+    MyBookingComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
     SharedModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

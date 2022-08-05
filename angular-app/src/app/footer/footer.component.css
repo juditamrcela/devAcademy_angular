@@ -18,7 +18,7 @@ h5{
     gap: 10px;
 
     position:absolute;
-    width: 1500px;
+    width: max-width;
     height: 86px;
     left: 0px;
     top: 2065px;
