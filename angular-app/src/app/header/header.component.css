@@ -1,10 +1,79 @@
-/* AppBar */
+.header{
+    
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
 
-nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-   padding: 16px 76px;
-   gap: 241px;
+    background: linear-gradient(90deg, #9C9C9C 0.88%, rgba(217, 217, 217, 0) 100.83%);
+    opacity: 0.7;
 
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 510px;
+    
+   
+}
+.title-big{
+    
+    left: 6.25%;
+    right: 42.36%;
+    top: 14.71%;
+    bottom: 62.75%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 120%;
+    /* or 115px */
+
+    letter-spacing: -1.5px;
+    color: #FFFFFF;
+    padding-top: 5%;
+    }
+.title-medium{
+        
+    left: 6.25%;
+    right: 44.17%;
+    top: 40.59%;
+    bottom: 48.04%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 120%;
+    /* identical to box height, or 58px */
+
+    letter-spacing: -1.5px;
+    padding-top: 2%;
+
+    color: #FFFFFF;
+}
+.title-small{
+   
+    left: 6.25%;
+    right: 60.9%;
+    top: 55.49%;
+    bottom: 37.06%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    /* or 38px */
+
+    letter-spacing: -1.5px;
+
+    /* Teal/Teal-800 */
+
+    color: #1A3440;
+    padding-top: 2%;
+}
+.header > div{
+    padding-left: 5%;
+   
 }

@@ -9,6 +9,12 @@ import { RecommendationsComponent } from './recommendations/recommendations.comp
 import { FavoritesComponent } from './favorites/favorites.component';
 import { LocationsComponent } from './locations/locations.component';
 import { AccomodationDetailsComponent } from './accomodation-details/accomodation-details.component';
+import { AccommodationComponent } from './accommodation/accommodation.component';
+import { MyPlacesComponent } from './my-places/my-places.component';
+import { MyBookingComponent } from './my-booking/my-booking.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,12 +24,18 @@ import { AccomodationDetailsComponent } from './accomodation-details/accomodatio
     RecommendationsComponent,
     FavoritesComponent,
     LocationsComponent,
-    AccomodationDetailsComponent
+    AccomodationDetailsComponent,
+    AccommodationComponent,
+    MyPlacesComponent,
+    MyBookingComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    NgSelectModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

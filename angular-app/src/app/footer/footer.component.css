@@ -1,0 +1,27 @@
+.title{
+    width: 113px;
+    height: 32px;
+}
+h5{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 133.4%;
+    color: #FFFFFF;
+}
+#footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 27px 90px;
+    gap: 10px;
+
+    position:absolute;
+    width: max-width;
+    height: 86px;
+    left: 0px;
+    top: 2065px;
+
+    background: #1A3440;
+}
