@@ -1,8 +1,20 @@
 <div class="container mt-5 py-5 w-75">
-    <div class="row align-items-center mb-5">
-
-            <app-location-box [locationInput]="locationItem" (locationOutput)="onItemRecived($event)" ></app-location-box>
-            
+    <div class="row align-items-center">
+        <div class="col-sm-9">
+           <h4 >Popular locations</h4>
+        </div>
+        <div class="col-sm-2">
+           <a routerLink="/locations">ALL LOCATIONS-></a>
+        </div>    
+       
     </div>
+    <br>
+    <div class="row align-items-center mb-5" >
+       <div class="col"  *ngFor="let location of locations">
+            <app-location-box [locationInput]="location" (locationOutput)="onClicked()" ></app-location-box>
+       </div>
+ 
+    </div>
+    
 </div>
 

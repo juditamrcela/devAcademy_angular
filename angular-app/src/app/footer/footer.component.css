@@ -17,11 +17,11 @@ h5{
     padding: 27px 90px;
     gap: 10px;
 
-    position:absolute;
+    position: fixed;
     width: max-width;
     height: 86px;
     left: 0px;
-    top: 2065px;
+    bottom: 0px;
 
     background: #1A3440;
 }

@@ -7,11 +7,14 @@ import { Location } from '../../models/location.model';
   styleUrls: ['./location-box.component.css']
 })
 export class LocationBoxComponent implements OnInit {
-   @Input() locationInput : Location | undefined;
+   @Input() locationInput !: Location;
    @Output() locationOutput = new EventEmitter<Location>();
 
    onClickSend():void {
-    this.locationOutput.emit(this.locationInput)
+    
+      this.locationOutput.emit(this.locationInput)
+    
+    
   }
 
   constructor() { }

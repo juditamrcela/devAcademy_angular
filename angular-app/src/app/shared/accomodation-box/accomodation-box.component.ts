@@ -6,14 +6,20 @@ import {Accomodation} from '../../models/Accomodation.model';
   styleUrls: ['./accomodation-box.component.css']
 })
 export class AccomodationBoxComponent implements OnInit {
-  @Input() accommodationInput : Accomodation | undefined;
+  @Input() accommodationInput !: Accomodation 
   @Output() accommodationOutput =new  EventEmitter<Accomodation>();
   constructor() { }
 
   ngOnInit(): void {
   }
+  counter(i:number){
+    return new Array(i);
+  }
   send(){
-    this.accommodationOutput.emit(this.accommodationInput);
+   
+      this.accommodationOutput.emit(this.accommodationInput);
+   
+    
   }
 
 }

@@ -1,0 +1,124 @@
+<div class="container">
+    <h4 style="padding: 5px 5px;">Add new place</h4> 
+    <form (ngSubmit)="onAddItem(f)" #f="ngForm">
+        <div class="row">
+            <div class="col-sm form-group">
+                        <!-- <label for="title">Title</label>
+                        <input
+                        type="text"
+                        id="title"
+                        class="form-control"
+                        name="title"
+                        > -->
+                <mat-form-field  appearance="outline" [style.width.px]=600>
+                    <mat-label for="title">Listing name</mat-label> 
+                    <input type="text" name="title" matInput ngModel required="true">
+                </mat-form-field>
+    
+            </div> 
+        </div>
+        <div class="row">
+                <div class="col-sm form-group">
+                        <!-- <label for="sDescription">Short description</label>
+                        <input
+                        type="text"
+                        id="sDescription"
+                        class="form-control"
+                        name="sDescription"
+                        > -->
+                    <mat-form-field  appearance="outline" [style.width.px]=600>
+                        <mat-label for="sDescription">Short description</mat-label> 
+                        <input matInput type="text" id="sDescription" name="sDescription">
+                    </mat-form-field>
+                </div>
+        </div>    
+        <div class="row">
+                <div class="col-sm form-group" >
+                    <mat-form-field appearance="outline" [style.width.px]=600 >
+                        <mat-label for="lDescription">Long description</mat-label>
+                            <textarea cdkTextareaAutosize cdkAutosizeMinRows="5"
+                            cdkAutosizeMaxRows="5" matInput name="lDescription" id="lDiscripiton" placeholder=""></textarea>
+                    </mat-form-field>
+                        
+                </div>
+        </div>
+        <div class="row">
+                    
+            <label for="categorization">Categorization</label>
+            <ngx-input-star-rating  style="display: inline;"></ngx-input-star-rating>
+                       
+                   
+        </div>
+        <div class="row">
+                <div class="col-sm-2 form-group">
+                    <mat-form-field appearance="outline" [style.width.px]=600>
+                        <mat-label>Accommodation type</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let type of types" [value]="type.id">{{type.name}}</mat-option>
+                        </mat-select> 
+                    </mat-form-field>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-sm form-group">
+                    <mat-form-field  appearance="outline" [style.width.px]=600>
+                        <mat-label for="capacity">Capacity</mat-label> 
+                        <input matInput name="capacity" type="number" ngModel>
+                    </mat-form-field>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-sm form-group">
+                <mat-form-field  appearance="outline" [style.width.px]=600>
+                    <mat-label for="price">Price</mat-label> 
+                    <input matInput name="price" type="number" ngModel pattern="^[1-9]+[0-9]*$">
+                </mat-form-field>
+            </div>
+        </div>    
+        <div class="row">
+            <div class="col-sm form-group">
+                <mat-form-field  appearance="outline" [style.width.px]=600>
+                    <mat-label for="location">Location</mat-label> 
+                    <input matInput name="location" ngModel>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm form-group">
+                <mat-form-field  appearance="outline" [style.width.px]=600>
+                    <mat-label for="postalCode">Postal code</mat-label> 
+                    <input matInput name="postalCode" ngModel>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm form-group">
+                <mat-form-field  appearance="outline" [style.width.px]=600>
+                    <mat-label for="imageUrl">Listing image URL</mat-label> 
+                    <input matInput name="imageUrl" ngModel>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 form-group">
+                <mat-label>  Free cancellation available </mat-label> 
+            </div> 
+            <div class="col-sm-7 form-group">
+                <mat-slide-toggle labelPosition="before" color="primary"> </mat-slide-toggle>
+            </div> 
+
+        </div>            
+        <div class="row">
+            <div class="col-xs-12">
+    
+                <button type="submit" [disabled]="!f.valid">Add new place</button>
+    
+            </div>
+    
+        </div>
+                
+    </form>
+</div>
+    
+
