@@ -1,0 +1,13 @@
+div.col-sm.form-group{
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+div.container{
+    margin-left: 50px;
+    margin-right: 20px;
+   padding-bottom: 30px;
+}
+
+div.row{
+    padding-bottom: 10px;
+}

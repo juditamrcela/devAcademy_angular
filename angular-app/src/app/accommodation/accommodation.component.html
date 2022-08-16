@@ -1,8 +1,18 @@
 <div class="container mt-5 py-5 w-75">
-    <div class="row align-items-center mb-5">
-        
-            
-            <app-accomodation-box [accommodationInput]='accomodationItem' (accommodationOutput)="onItemRecived($event)" ></app-accomodation-box>
+    <div class="row align-items-center">
+        <span class="col-sm-9">
+           <h4 >Home guests love</h4>
+        </span>
+        <span class="col-sm-2">
+           <a  routerLink="/recommendations">VIEW ALL HOMES-></a>
+        </span>    
        
+    </div>
+    <br>
+    <div class="row align-items-center mb-5" >
+        <div class="col col-lg" *ngFor="let accommodation of numberOfRows(accomodationItem,4)">
+            <app-accomodation-box [accommodationInput]='accommodation' (accommodationOutput)="onItemRecived($event)" ></app-accomodation-box>
+        </div> 
+          
     </div>
 </div>

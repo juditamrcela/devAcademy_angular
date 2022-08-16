@@ -1,7 +1,8 @@
-<div id="location" (click)="onClickSend()" class="col">
-    <a href="#" class="list-group-item"></a>
-    <h6 id="name">Location name</h6>
-    <p id="Properties">Properties</p>
-    <img src="" rel="">
-
+<div id="location" (click)="onClickSend()" style="width:250px; height: 230px;" class="card img-fluid" >
+   <img class="card-img-top" style="width: inherit ; height:inherit" src="{{locationInput.imageUrl}}">
+   <div class="card-img-overlay">
+    <h6  class="card-title" id="name">{{ locationInput.name}}</h6>
+    <p  class="card-text" id="Properties">{{locationInput.postalCode}}</p>
+   </div>
+   
 </div>

@@ -11,13 +11,15 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule} from '@angular/material/icon';
+import { FilterPipe } from './filter/filter.pipe'
 
 @NgModule({
   declarations: [
     LocationBoxComponent,
     AccomodationBoxComponent,
-    FilterComponent
+    FilterComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,

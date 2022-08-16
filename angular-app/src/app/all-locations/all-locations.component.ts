@@ -2,12 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import {Location } from '../models/location.model';
 import {ActivatedRoute, Router } from '@angular/router';
 @Component({
-  selector: 'app-locations',
-  templateUrl: './locations.component.html',
-  styleUrls: ['./locations.component.css']
+  selector: 'app-all-locations',
+  templateUrl: './all-locations.component.html',
+  styleUrls: ['./all-locations.component.css']
 })
-export class LocationsComponent implements OnInit {
-  locations: Location[] = [ 
+export class AllLocationsComponent implements OnInit {
+
+ 
+  selectedlocation: number | undefined;
+  
+  locations=[
+    { id: 1, name: 'Zagreb' },
+    { id: 2, name: 'Split' },
+    { id: 3, name: 'Dubrovnik' },
+    { id: 4, name: 'Pula' },
+  ]
+  allLocations: Location[] = [ 
     { 
     id: "0f29d778-0592-43cb-a21c-a4aa6a4c7997", 
     name: "Vukovar", 
@@ -24,19 +34,13 @@ export class LocationsComponent implements OnInit {
     postalCode: 34000,
     imageUrl: "https://www.pozega.hr/images/stranica/rotate/108.jpg"} 
   ]
-  
-  
-  onItemRecived(event: Location){
-    
-    console.log(event)
-  }
-  onClicked(){
-    this.router.navigate(['/locations','id'],{relativeTo:this.route});
-  }
-  constructor(private router:Router,
+  constructor(private router: Router,
     private route:ActivatedRoute) { }
-
   ngOnInit(): void {
   }
+  onClickedLocation(){
+    this.router.navigate(['/locations','id'],{relativeTo:this.route});
+  }
+
 
 }

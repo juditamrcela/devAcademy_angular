@@ -1,14 +1,27 @@
-<app-nav-bar></app-nav-bar>
-<div class="header">
+<nav class="navbar navbar-expand-lg">
+  
+        <div class="title">
+            <a style="text-decoration:none ;" routerLink="/"><h6>Staycation</h6></a>
 
-    <div class="title-big">
-        Enjoy your travels
-    </div>
-    <div class="title-medium">
-        with Staycation and collect rewards
-    </div>
-    <div class="title-small">
-        Book now & save 10% or more today
-    </div>
-</div>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="itmesNavBar">
+            <ul class="navbar-nav" >
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a class="nav-link" routerLink="/locations">Locations</a></li>
+                <li class="nav-item" routerLinkActive="active"><a class="nav-link" routerLink="/myPlaces">My places</a></li>
+                <li class="nav-item" routerLinkActive="active"><a  class="nav-link"routerLink="/myBookings">My bookings</a></li>
+                
+            </ul>
+            
+        </div>
+      
+       <a class="nav-item nav-link" id="logout" routerLinkActive="active" routerLink="#">LOGOUT</a>
+
+       
+   
+</nav>
+
+
 

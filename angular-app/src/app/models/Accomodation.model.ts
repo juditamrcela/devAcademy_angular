@@ -15,7 +15,7 @@ export class Accomodation{
     public imageUrl:string;
     public freeCancelation:boolean;
     public price:number;
-    public locationId:string;
+    public locationID:string;
 
     constructor(id:string,title:string,subtitle:string,descript:string,type:type,categor:number,perCount:number,imgUrl:string,freeCancl:boolean,price:number,locationId:string){
         this.id=id;
@@ -28,7 +28,7 @@ export class Accomodation{
         this.imageUrl=imgUrl;
         this.freeCancelation=freeCancl;
         this.price=price;
-        this.locationId=locationId;
+        this.locationID=locationId;
     }
 
 }
