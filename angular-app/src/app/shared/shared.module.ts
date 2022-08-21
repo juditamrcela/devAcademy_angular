@@ -12,14 +12,22 @@ import { MatCardModule } from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
-import { FilterPipe } from './filter/filter.pipe'
-
+import { FilterPipe } from './filter/filter.pipe';
+import { FiltersComponent } from './filters/filters.component';
+import { ReservationBoxComponent } from './reservation-box/reservation-box.component';
+import { DeleteConfirmationDailogComponent } from './delete-confirmation-dailog/delete-confirmation-dailog.component'
+import {MatDialogModule} from '@angular/material/dialog';
+import { CreateReservationConfirmationDialogComponent } from './create-reservation-confirmation-dialog/create-reservation-confirmation-dialog.component'
 @NgModule({
   declarations: [
     LocationBoxComponent,
     AccomodationBoxComponent,
     FilterComponent,
-    FilterPipe
+    FilterPipe,
+    FiltersComponent,
+    ReservationBoxComponent,
+    DeleteConfirmationDailogComponent,
+    CreateReservationConfirmationDialogComponent
   ],
   imports: [
     CommonModule,
@@ -31,15 +39,24 @@ import { FilterPipe } from './filter/filter.pipe'
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   exports:[ 
     LocationBoxComponent,
     AccomodationBoxComponent,
     FilterComponent,
+    FiltersComponent,
+    ReservationBoxComponent,
+    DeleteConfirmationDailogComponent,
     CommonModule,
-    FormsModule
-  ]
+    FormsModule,
+    MatDatepickerModule,
+    FilterPipe,
+    CreateReservationConfirmationDialogComponent
+
+  ],
+  entryComponents:[MatDialogModule]
     
 })
 export class SharedModule { }

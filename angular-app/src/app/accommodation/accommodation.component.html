@@ -9,10 +9,12 @@
        
     </div>
     <br>
-    <div class="row align-items-center mb-5" >
-        <div class="col col-lg" *ngFor="let accommodation of numberOfRows(accomodationItem,4)">
-            <app-accomodation-box [accommodationInput]='accommodation' (accommodationOutput)="onItemRecived($event)" ></app-accomodation-box>
+    <p *ngIf="accommodations.length<1 && !isLoading">No accommodations available</p>
+    <div class="row align-items-center mb-5" *ngIf="accommodations.length>=1  && !isLoading" >
+        <div class="col col-lg" *ngFor="let accommodation of numberOfCol(accommodations,4)">
+            <app-accomodation-box [accommodationInput]='accommodation' (accommodationOutput)="onClicked($event)" ></app-accomodation-box>
         </div> 
-          
+         
     </div>
+    <p *ngIf="isLoading">Loading...</p>
 </div>

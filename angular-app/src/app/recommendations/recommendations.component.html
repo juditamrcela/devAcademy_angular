@@ -1,8 +1,20 @@
-<div class="row">
-    <div class="col-xs-10">
-        <hr>
-        <p>Recommendations</p>
-       
-        
+<div class="container">
+    <h4>Homes guests love</h4>
+    <br>
+    <div class="row">
+        <div class="col-sm-3">
+            <p> {{accommodations.length}} properties</p>
+        </div>
+
     </div>
+    <app-filters></app-filters>
+    <p *ngIf="accommodations.length<1 && !isLoading">No accommodations available</p>
+        <div class="row align-items-center mb-5" *ngIf="accommodations.length>=1  && !isLoading" >
+            <div class="col col-lg" *ngFor="let accommodation of accommodations">
+                <app-accomodation-box [accommodationInput]='accommodation' (accommodationOutput)="onClicked($event)" ></app-accomodation-box>
+            </div> 
+             
+        </div>
+        <p *ngIf="isLoading">Loading...</p>
+    
 </div>

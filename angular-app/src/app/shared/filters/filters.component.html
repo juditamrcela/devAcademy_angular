@@ -2,16 +2,6 @@
     <form (ngSubmit)="onFilter(f)" #f="ngForm">
         <div class="row justify-content-between align-items-start">
            
-            <div class="col-sm">
-                <mat-form-field appearance="outline">
-                    <mat-label>Where are you going?</mat-label>
-                    <mat-icon matPrefix>airport_shuttle</mat-icon>
-                    <mat-select ngModel name="location">
-                        <mat-option *ngFor="let location of locations" [value]="location.id">{{location.name}}</mat-option>
-                    </mat-select>
-                        
-                </mat-form-field>
-            </div>
                 
             <div class="col-sm">
                 <mat-form-field appearance="outline">
@@ -37,7 +27,7 @@
                 <mat-form-field  appearance="outline">
                     <mat-label>How many people?</mat-label>
                     <mat-icon matPrefix>person</mat-icon>
-                    <input matInput ngModel type="number" name="personCount">
+                    <input matInput ngModel name="personCount">
                 </mat-form-field>
             </div>
                
@@ -49,17 +39,18 @@
                     <mat-label>What type of accommodation?</mat-label>
                     <mat-icon matPrefix>hotel</mat-icon>
                     <mat-select ngModel name="accommodationType">
-                        <mat-option *ngFor="let type of types" [value]="type.name">{{type.name}}</mat-option>
+                        <mat-option *ngFor="let type of types" [value]="type.id">{{type.name}}</mat-option>
                     </mat-select>
                     
                 </mat-form-field>
             </div>
      
             <div class="col-sm" id="button" >
-                <button type="submit" > Search</button>
+                <button type="submit"> Search</button>
             </div>
             
         </div>
     </form>
     
 </div>
+

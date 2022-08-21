@@ -1,0 +1,105 @@
+<div style="margin-left: 30px;margin-top:30px;">
+    <h4 style="padding: 10px;padding-bottom:20px;">Book your stay</h4>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="row">
+            <div class="col-sm-5">
+                <mat-form-field  appearance="outline" [style.width.px]=650>
+                     
+                    <div>
+                        <mat-label for="name">Full name</mat-label>
+                        <input  id="name" type="text" name="name" matInput ngModel required="true">
+                    </div>
+                  
+                    
+                </mat-form-field>
+            </div>
+            <div class="col-sm-7">
+                <div class="card" style="width: 45rem;">
+                    <img src="{{accommodation.imageUrl}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{accommodation.title}}</h5>
+                      <h5 class="card-title" > 
+                        <span *ngFor="let in of counter(accommodation.categorization)" style="font-size:200%;color:#F3B08E;">
+                            &sstarf;
+                        </span>
+                      </h5>
+                      <p class="card-text" *ngIf="accommodation.type===0">Suite</p>
+                      <p class="card-text" *ngIf="accommodation.type===1">Room</p>
+                      <p class="card-text" *ngIf="accommodation.type===2">Apartment</p>
+                      <p class="card-text" *ngIf="accommodation.type===3">Mobile home</p>
+                      <p class="card-text">{{accommodation.location?.name}}</p>
+                      <p class="card-text">{{accommodation.location?.postalCode}}</p>
+                      <p class="card-text"> EUR {{accommodation.price}} per night </p>
+                    
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div>
+            <div class="col">
+                <mat-form-field  appearance="outline" [style.width.px]=650>
+                     
+                    <div>
+                        <mat-label for="email">Email address</mat-label>
+                        <input  id="email" type="email" name="email" matInput ngModel required="true">
+                    </div>
+                  
+                    
+                </mat-form-field>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <mat-form-field  appearance="outline" [style.width.px]=650>
+                     
+                    <div>
+                        <mat-label for="personCount">Number of guests</mat-label>
+                        <input  id="personCount" type="text" name="personCount" matInput ngModel required="true">
+                    </div>
+                  
+                    
+                </mat-form-field>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <span style="padding-left: 0px;padding-right: 10px;">
+                    <mat-form-field appearance="outline" [style.width.px]=315>
+                        <mat-label>Choose a date</mat-label>
+                        <input ngModel name="checkIn" placeholder="Select Date" matInput [matDatepicker]="datepicker1">
+                            
+                        <mat-datepicker-toggle matSuffix [for]="datepicker1"></mat-datepicker-toggle>
+                        <mat-datepicker #datepicker1></mat-datepicker>
+                    </mat-form-field>
+                </span>
+                <span style="padding-left: 10px;padding-right: 10px;">
+                    <mat-form-field appearance="outline" [style.width.px]=315>
+                        <mat-label>Choose a date</mat-label>
+                        <input ngModel name="checkOut" placeholder="Select Date" matInput [matDatepicker]="datepicker2">
+                            
+                        <mat-datepicker-toggle matSuffix [for]="datepicker2"></mat-datepicker-toggle>
+                        <mat-datepicker #datepicker2></mat-datepicker>
+                    </mat-form-field>
+                </span>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-9">
+                <button type="submit">
+                    BOOK YOUR STAY
+                </button>
+            </div>
+        </div>
+        
+
+    </form>
+
+</div>

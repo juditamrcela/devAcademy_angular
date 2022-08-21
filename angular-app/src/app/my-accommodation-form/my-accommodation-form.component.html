@@ -1,6 +1,7 @@
 <div class="container">
-    <h4 style="padding: 5px 5px;">Add new place</h4> 
-    <form (ngSubmit)="onAddItem(f)" #f="ngForm">
+    <h4 *ngIf="isAddMode" style="padding: 5px 5px;">Add new place</h4> 
+    <h4 *ngIf="!isAddMode" style="padding: 5px 5px;">Edit place</h4> 
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div class="row">
             <div class="col-sm form-group">
                         <!-- <label for="title">Title</label>
@@ -10,109 +11,179 @@
                         class="form-control"
                         name="title"
                         > -->
-                <mat-form-field  appearance="outline" [style.width.px]=600>
-                    <mat-label for="title">Listing name</mat-label> 
-                    <input type="text" name="title" matInput ngModel required="true">
+                <mat-form-field  appearance="outline" [style.width.px]=620>
+                     
+                    <div *ngIf="isAddMode">
+                        <mat-label for="title">Listing name</mat-label>
+                        <input  id="title" type="text" name="title" matInput ngModel required="true">
+                    </div>
+                    <div *ngIf="!isAddMode">
+                        <input id="title"  type="text" name="title" matInput value={{accommodation.title}} placeholder={{accommodation.title}} ngModel required="true">
+                    </div>
+                    
                 </mat-form-field>
     
             </div> 
         </div>
         <div class="row">
                 <div class="col-sm form-group">
-                        <!-- <label for="sDescription">Short description</label>
-                        <input
-                        type="text"
-                        id="sDescription"
-                        class="form-control"
-                        name="sDescription"
-                        > -->
-                    <mat-form-field  appearance="outline" [style.width.px]=600>
-                        <mat-label for="sDescription">Short description</mat-label> 
-                        <input matInput type="text" id="sDescription" name="sDescription">
+                    <mat-form-field  appearance="outline" [style.width.px]=620>
+                        <div *ngIf="isAddMode">
+                            <mat-label for="sDescription">Short description</mat-label> 
+                            <input matInput  id="sDescription"  type="text"  ngModel name="sDescription">
+                            
+                        </div>
+                        <div *ngIf="!isAddMode">
+                            <input matInput   id="sDescription" type="text" placeholder={{accommodation.subtitle}} ngModel name="sDescription">
+                        </div>
+                       
                     </mat-form-field>
                 </div>
         </div>    
         <div class="row">
                 <div class="col-sm form-group" >
-                    <mat-form-field appearance="outline" [style.width.px]=600 >
-                        <mat-label for="lDescription">Long description</mat-label>
+                    <mat-form-field appearance="outline" [style.width.px]=620 >
+                        <div *ngIf="isAddMode">
+                            <mat-label for="lDescription">Long description</mat-label>
                             <textarea cdkTextareaAutosize cdkAutosizeMinRows="5"
-                            cdkAutosizeMaxRows="5" matInput name="lDescription" id="lDiscripiton" placeholder=""></textarea>
+                            cdkAutosizeMaxRows="5" id="lDescription" matInput  name="lDescription" ngModel ></textarea>
+                        </div>
+                        <div *ngIf="!isAddMode">
+                            <textarea cdkTextareaAutosize cdkAutosizeMinRows="5"
+                            cdkAutosizeMaxRows="5"  id="lDescription" matInput  name="lDescription" ngModel placeholder={{accommodation.description}}></textarea>
+                        </div>
+                       
                     </mat-form-field>
                         
                 </div>
         </div>
         <div class="row">
-                    
-            <label for="categorization">Categorization</label>
-            <ngx-input-star-rating  style="display: inline;"></ngx-input-star-rating>
+                <div *ngIf="isAddMode">
+                    <mat-label for="categorization">Categorization</mat-label>
+                    <ngx-input-star-rating ngModel  id="categorization" name="categorization" style="display: inline;"></ngx-input-star-rating>
+                </div>
+                <div *ngIf="!isAddMode">
+                    <ngx-input-star-rating ngModel  id="categorization" name="categorization" style="display: inline;"></ngx-input-star-rating>
+                </div>
+                
+                  
+            
                        
                    
         </div>
         <div class="row">
                 <div class="col-sm-2 form-group">
-                    <mat-form-field appearance="outline" [style.width.px]=600>
-                        <mat-label>Accommodation type</mat-label>
-                        <mat-select>
-                            <mat-option *ngFor="let type of types" [value]="type.id">{{type.name}}</mat-option>
-                        </mat-select> 
+                    <mat-form-field appearance="outline" [style.width.px]=620>
+                        <div *ngIf="isAddMode">
+                            <mat-label for="accommodationType" >Accommodation type</mat-label>
+                            <mat-select name="accommodationType" id="accommodationType" ngDefaultControl ngModel required="true">
+                                <mat-option  name="accommodationType" *ngFor="let type of types" [value]="type.id">{{type.name}}</mat-option>
+                            </mat-select> 
+                        </div>
+                        <div *ngIf="!isAddMode">
+                            <mat-select name="accommodationType" id="accommodationType" ngDefaultControl ngModel required="true">
+                                <mat-option  name="accommodationType" *ngFor="let type of types" [value]="type.id">{{type.name}}</mat-option>
+                            </mat-select>
+                        </div>
+                        
                     </mat-form-field>
                 </div>
         </div>
         <div class="row">
             <div class="col-sm form-group">
-                    <mat-form-field  appearance="outline" [style.width.px]=600>
-                        <mat-label for="capacity">Capacity</mat-label> 
-                        <input matInput name="capacity" type="number" ngModel>
+                    <mat-form-field  appearance="outline" [style.width.px]=620>
+                        <div *ngIf="isAddMode">
+                            <mat-label for="capacity">Capacity</mat-label> 
+                            <input matInput  id="capacity" name="capacity" type="number" pattern="^[1-9]+[0-9]*$" required="true" ngModel>
+                        </div>
+                        <div *ngIf="!isAddMode">
+                            <input matInput  id="capacity" name="capacity" type="number" placeholder={{accommodation.capacity}} pattern="^[1-9]+[0-9]*$" required="true" ngModel>
+                        </div>
+
+                        
                     </mat-form-field>
             </div>
         </div>
     
         <div class="row">
             <div class="col-sm form-group">
-                <mat-form-field  appearance="outline" [style.width.px]=600>
-                    <mat-label for="price">Price</mat-label> 
-                    <input matInput name="price" type="number" ngModel pattern="^[1-9]+[0-9]*$">
+                <mat-form-field  appearance="outline" [style.width.px]=620>
+                    <div *ngIf="isAddMode">
+                        <mat-label for="price">Price</mat-label> 
+                        <input matInput  id="price" name="price" type="decimal" ngModel  >
+                    </div>
+                    <div *ngIf="!isAddMode">
+                        <input matInput  id="price" name="price" type="number" placeholder={{accommodation.price}} ngModel pattern="^[1-9]+[0-9]*$">
+                    </div>
+                    
                 </mat-form-field>
             </div>
         </div>    
         <div class="row">
             <div class="col-sm form-group">
-                <mat-form-field  appearance="outline" [style.width.px]=600>
-                    <mat-label for="location">Location</mat-label> 
-                    <input matInput name="location" ngModel>
+                <mat-form-field  appearance="outline" [style.width.px]=620>
+                    <div *ngIf="isAddMode">
+                        <mat-label for="location">Location</mat-label> 
+                        <input matInput  id="location"  name="location" ngModel>
+                    </div>
+                    <div *ngIf="!isAddMode">
+                        <input matInput  id="location"  placeholder={{accommodation.location?.name}} name="location" ngModel>
+                    </div>
+
+                    
                 </mat-form-field>
             </div>
         </div>
         <div class="row">
             <div class="col-sm form-group">
-                <mat-form-field  appearance="outline" [style.width.px]=600>
-                    <mat-label for="postalCode">Postal code</mat-label> 
-                    <input matInput name="postalCode" ngModel>
+                <mat-form-field  appearance="outline" [style.width.px]=620>
+                    <div *ngIf="isAddMode">
+                        <mat-label for="postalCode">Postal code</mat-label> 
+                        <input matInput  id="postalCode" name="postalCode" ngModel>
+                    </div>
+                    <div *ngIf="!isAddMode">
+                        <input matInput   id="postalCode" placeholder={{accommodation.location?.postalCode}} name="postalCode" ngModel>
+                    </div>
+                   
                 </mat-form-field>
             </div>
         </div>
         <div class="row">
             <div class="col-sm form-group">
-                <mat-form-field  appearance="outline" [style.width.px]=600>
-                    <mat-label for="imageUrl">Listing image URL</mat-label> 
-                    <input matInput name="imageUrl" ngModel>
+                <mat-form-field  appearance="outline" [style.width.px]=620>
+                    <div *ngIf="isAddMode">
+                        <mat-label for="imageUrl">Listing image URL</mat-label> 
+                        <input matInput   id="imageUrl" name="imageUrl" ngModel>
+                    </div>
+                    <div *ngIf="!isAddMode">   
+                        <input matInput  id="imageUrl" placeholder={{accommodation.imageUrl}} name="imageUrl" ngModel>
+                    </div>
+                    
                 </mat-form-field>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-5 form-group">
-                <mat-label>  Free cancellation available </mat-label> 
+            <div class="col-sm-6 form-group">
+                <mat-label for="freeCancel">  Free cancellation available </mat-label> 
             </div> 
-            <div class="col-sm-7 form-group">
-                <mat-slide-toggle labelPosition="before" color="primary"> </mat-slide-toggle>
+            <div class="col-sm-6 form-group">
+                <div>
+                    <mat-slide-toggle [ngModel]="checked" id="freeCancel" [checked]="checked" (change)="onChange($event)" name="freeCancel" labelPosition="before"  color="primary"> </mat-slide-toggle>
+                </div>
+                
+               
+                
             </div> 
 
         </div>            
         <div class="row">
-            <div class="col-xs-12">
-    
-                <button type="submit" [disabled]="!f.valid">Add new place</button>
+            <div class="col-md-5">
+
+            </div>
+            <div class="col-md-7">
+                
+                <button *ngIf="isAddMode" type="submit" [disabled]="!f.valid">Add new place</button>
+                <button *ngIf="!isAddMode" type="submit" [disabled]="!f.valid">Edit place</button>
     
             </div>
     

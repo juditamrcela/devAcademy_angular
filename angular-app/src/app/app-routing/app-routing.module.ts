@@ -10,18 +10,22 @@ import { RecommendationsComponent } from 'app/recommendations/recommendations.co
 import { MyAccommodationFormComponent } from 'app/my-accommodation-form/my-accommodation-form.component';
 import { PageNotFoundComponent } from 'app/page-not-found/page-not-found.component';
 import { AccomodationDetailsComponent } from 'app/accomodation-details/accomodation-details.component';
+import { BookPlaceFormComponent } from 'app/book-place-form/book-place-form.component';
+
 
 
 const appRoutes: Routes=[
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo:'home',pathMatch:'full' },
+  {path: 'home',component:HomeComponent},
   { path: 'locations', component: AllLocationsComponent },
-  {path: 'locations/:id',component:LocationComponent},
+  {path: 'location',component:LocationComponent},
   { path: 'myPlaces', component: MyPlacesComponent },
   { path: 'myBookings', component: MyBookingComponent },
   {path:'recommendations',component:RecommendationsComponent},
   {path:'myPlaces/add-new',component:MyAccommodationFormComponent},
   {path:'myPlaces/edit/:id',component:MyAccommodationFormComponent},
   {path:'accommodation/:id',component:AccomodationDetailsComponent},
+  {path:'bookPlace/:id',component:BookPlaceFormComponent},
   {path:'not-found',component: PageNotFoundComponent},
   {path:'**',redirectTo:'/not-found'}
   

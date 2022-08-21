@@ -1,0 +1,31 @@
+a{
+    width: 52px;
+    height: 24px;
+
+    /* Button/Medium */
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 170%;
+    
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+
+    color: #20C5B5;
+
+
+}
+div.my-dialog{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    background: #FFFFFF;
+   
+    
+}

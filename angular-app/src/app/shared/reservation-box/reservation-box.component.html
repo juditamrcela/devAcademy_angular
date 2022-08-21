@@ -1,0 +1,19 @@
+
+<div id="reservation" class="card h-100" (click)="send()" style="width:250px;" class="card img-fluid border-0">
+    <img class="card-img-top img-fluid" style="width: inherit ; height:inherit" src="{{reservationInput.accomodation.imageUrl}}">
+    <div class="card-body">
+     <h6  class="card-title" >{{reservationInput.accomodation.title}}</h6>
+     <p class="card-text" style="color:#ADADAD">{{reservationInput.accomodation.location?.name}}</p>
+     <p  class="card-text" >{{reservationInput.checkIn | date}} - {{reservationInput.checkOut | date}}</p>
+     <div class="card-text">
+        <span  *ngFor="let in of counter(reservationInput.accomodation.categorization)" style="font-size:200%;color:#F3B08E;">
+            &sstarf;
+        </span>
+        
+     </div>  
+
+    </div>
+ 
+</div>
+
+

@@ -1,1 +1,66 @@
-<p>Accomodation details</p>
+<div class="align-items-center" id="mydiv">
+    <img  class="img-fluid" style="width: 1500px; height: 500px; align-items: center;" src="{{accommodation.imageUrl}}">
+</div>
+<div class="container">
+    
+    <div class="row">
+        <div class="col-sm-3">
+            <span>
+                <h4 style="display: inline;">{{accommodation.title}}</h4>
+            </span>
+            
+        </div>
+        <div class="col-sm-6">
+            <span  *ngFor="let in of counter(accommodation.categorization)" style="font-size:200%;color:#F3B08E;">
+                &sstarf;
+            </span>
+        </div>
+        <div class="col-sm-3">
+           
+                
+            <div class="card" style="border:#F2FDFC">
+                <div class="card-body">
+                    <h5 class="card-title">Property info</h5>
+                    <p class="card-text">{{accommodation.personCount}} guests</p>
+                    <p class="card-text" *ngIf="accommodation.type===0">Suite</p>
+                    <p class="card-text" *ngIf="accommodation.type===1">Room</p>
+                    <p class="card-text" *ngIf="accommodation.type===2">Apartment</p>
+                    <p class="card-text" *ngIf="accommodation.type===3">Mobile Home</p>
+                    <p class="card-text"> EUR {{accommodation.price}} per night</p>
+                    <p class="card-text">{{accommodation.location.name}}</p>
+                    <p class="card-text">{{accommodation.location.properties}}</p>
+                    <br>
+                    <button><a style="text-decoration: none;" (click)="OnClick(accommodation.id)" class="btn">Book your stay</a></button>
+                </div>
+        
+            </div>
+                
+           
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <p>{{accommodation.subtitle}}</p>
+        </div>
+    </div>
+    <div class="row" *ngIf="accommodation.freeCancelation===true">
+        <div class="col-sm-4">
+            <span>
+                <mat-icon matPrefix>calendar_today</mat-icon>
+                <mat-label>Free cancelation available</mat-label>
+                
+            </span>
+           
+        </div>
+        
+           
+        
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <p>{{accommodation.description}}</p>
+        </div>
+    </div>
+    
+</div>
+
