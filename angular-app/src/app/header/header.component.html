@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg">
   
         <div class="title">
-            <a style="text-decoration:none ;" routerLink="/"><h6>Staycation</h6></a>
+            <a style="text-decoration:none ;" routerLink="/home"><h6>Staycation</h6></a>
 
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,8 +9,8 @@
         </button>
         <div class="collapse navbar-collapse" id="itmesNavBar">
             <ul class="navbar-nav" >
-                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a class="nav-link" routerLink="/locations">Locations</a></li>
-                <li class="nav-item" routerLinkActive="active"><a class="nav-link" routerLink="/myPlaces">My places</a></li>
+                <li role="presentation" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a class="nav-link" routerLink="/locations">Locations</a></li>
+                <li class="nav-item active" routerLinkActive="active"><a class="nav-link" routerLink="/myPlaces">My places</a></li>
                 <li class="nav-item" routerLinkActive="active"><a  class="nav-link"routerLink="/myBookings">My bookings</a></li>
                 
             </ul>

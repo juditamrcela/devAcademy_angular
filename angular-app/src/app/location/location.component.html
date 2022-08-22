@@ -1,1 +1,30 @@
-<p>location works!</p>
+<div class="container">
+    <div class="row">
+        <div *ngIf="accommodations.length>=1 && !isLoading" class="col-sm-9">
+            
+            <span><h4>Stays in {{accommodations[0].location?.name}}</h4>
+            </span>
+        </div>
+        <p *ngIf="accommodations.length<1 && !isLoading">No accommodations available</p>
+        <br>
+    </div>
+    <div class="row">
+        <div  *ngIf="accommodations.length>=1 && !isLoading" class="col-sm-4">
+            <p>{{accommodations[0].location?.properties}} properties</p>
+        </div>
+        <p *ngIf="accommodations.length<1 && !isLoading">No accommodations available</p>
+
+    </div>
+
+    
+    <app-filters></app-filters>
+    <p *ngIf="accommodations.length<1 && !isLoading">No accommodations available</p>
+        <div class="row align-items-center mb-5" *ngIf="accommodations.length>=1  && !isLoading" >
+            <div class="col col-lg" *ngFor="let accommodation of accommodations">
+                <app-accomodation-box [accommodationInput]='accommodation' (accommodationOutput)="onClicked($event)" ></app-accomodation-box>
+            </div> 
+             
+        </div>
+        <p *ngIf="isLoading">Loading...</p>
+
+</div>

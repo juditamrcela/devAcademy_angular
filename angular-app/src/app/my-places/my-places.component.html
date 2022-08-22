@@ -9,8 +9,19 @@
         </div>
     </div>
     
-    <div class="row">
-   
-    </div>
+    <p *ngIf="accommodations.length<1 && !isLoading">No accommodations available</p>
+        <div class="row gy-3 align-items-center mb-5" *ngIf="accommodations.length>=1  && !isLoading" >
+            <div class="col-lg" *ngFor="let accommodation of accommodations">
+                <app-my-place-box [accommodationInput]='accommodation' ></app-my-place-box>
+                <ul>
+                    <li><a class="card-link" (click)="onClickedEdit(accommodation.id)" style="text-decoration: none; color:#40E0D0;"> EDIT</a></li>
+                    <li><a class="card-link" (click)="onClicked(accommodation.id)" style="text-decoration: none; color:#EF6B6B"> DELETE PLACE</a></li>
+                </ul>
+                
+                
+               
+            </div> 
+        </div>
+        <p *ngIf="isLoading">Loading...</p>
 
 </div>

@@ -48,3 +48,8 @@ color: #FFFFFF;
 
 text-shadow: 0px 4px 4px rgba(205, 205, 205, 0.25);
 }
+.card-img-top {
+        
+    
+    object-fit: cover;
+}

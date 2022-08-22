@@ -1,8 +1,8 @@
-<div id="location" (click)="onClickSend()" style="width:250px; height: 230px;" class="card img-fluid" >
+<div id="location" (click)="onClickSend()" style="min-width:100px;width:300px;height: 230px;" class="card img-fluid" >
    <img class="card-img-top" style="width: inherit ; height:inherit" src="{{locationInput.imageUrl}}">
-   <div class="card-img-overlay">
+   <div class="card-img-overlay img-responsive">
     <h6  class="card-title" id="name">{{ locationInput.name}}</h6>
-    <p  class="card-text" id="Properties">{{locationInput.postalCode}}</p>
+    <p  class="card-text" id="Properties">{{locationInput.properties}} properties</p>
    </div>
    
 </div>

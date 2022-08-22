@@ -1,0 +1,29 @@
+
+p{
+        
+    left: 0%;
+    right: 83.16%;
+    top: 86.68%;
+    bottom: 8.96%;
+    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 120%;
+    /* identical to box height, or 18px */
+    
+    letter-spacing: 0.25px;
+    
+    /* Teal/Teal-800 */
+    
+    color: #1A3440;
+    }
+    
+ .card-img-top {
+        
+        
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}

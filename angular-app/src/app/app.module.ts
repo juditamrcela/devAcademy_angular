@@ -4,6 +4,7 @@ import {FormsModule} from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -18,9 +19,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AllLocationsComponent } from './all-locations/all-locations.component';
 import {MatSelectModule} from '@angular/material/select';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatCardModule } from '@angular/material/card';
+
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -33,6 +32,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxInputStarRatingModule } from '@ngx-lite/input-star-rating';
+import { MyPlaceBoxComponent } from './my-place-box/my-place-box.component';
+import { BookPlaceFormComponent } from './book-place-form/book-place-form.component';
 //import { NgbRatingModule} from '@ng-bootstrap/ng-bootstrap'; 
 
 
@@ -53,7 +54,8 @@ import { NgxInputStarRatingModule } from '@ngx-lite/input-star-rating';
     HomeComponent,
     LocationComponent,
     PageNotFoundComponent,
-   
+    MyPlaceBoxComponent,
+    BookPlaceFormComponent
    
 
   ],
@@ -71,12 +73,14 @@ import { NgxInputStarRatingModule } from '@ngx-lite/input-star-rating';
     AppRoutingModule,
     RouterModule,
     ReactiveFormsModule,
-    NgxInputStarRatingModule
+    NgxInputStarRatingModule,
+    HttpClientModule
    
     
     
   ],
   providers: [],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }

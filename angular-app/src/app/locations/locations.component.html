@@ -3,18 +3,43 @@
         <div class="col-sm-9">
            <h4 >Popular locations</h4>
         </div>
+        <br>
         <div class="col-sm-2">
            <a routerLink="/locations">ALL LOCATIONS-></a>
         </div>    
        
     </div>
     <br>
-    <div class="row align-items-center mb-5" >
-       <div class="col"  *ngFor="let location of locations">
-            <app-location-box [locationInput]="location" (locationOutput)="onClicked()" ></app-location-box>
-       </div>
- 
+    <p *ngIf="locations.length<1 && !isLoading">No locations available</p>
+      <div class="container" *ngIf="locations.length>=5">
+         <div class="row align-items-center mb-5" >
+            <div class="col-lg"  >
+                  <app-location-box  [locationInput]="locations[1]" (locationOutput)="onClicked($event)"  ></app-location-box>
+            </div>
+            <div class="col-lg">
+               <app-location-box [locationInput]="locations[2]" (locationOutput)="onClicked($event)" ></app-location-box>
+            </div>
+         </div>
+         <div class="row align-items-center mb-5" >
+            <div class="col-lg" >
+                  <app-location-box [locationInput]="locations[3]" (locationOutput)="onClicked($event)"  ></app-location-box>
+            </div>
+            <div class="col-lg" >
+               <app-location-box [locationInput]="locations[4]" (locationOutput)="onClicked($event)"  ></app-location-box>
+            </div>
+            <div class="col-lg">
+               <app-location-box [locationInput]="locations[5]" (locationOutput)="onClicked($event)" ></app-location-box>
+            </div>
+         </div>
+      </div>
+    <div class="container" *ngIf="locations.length<5">
+      <div class="row">
+         <div class="col" *ngFor="let location of locations">
+            <app-location-box [locationInput]="location" (locationOutput)="onClicked($event)"></app-location-box>
+         </div>
+      </div>
     </div>
+    <p *ngIf="isLoading">Loading...</p>
     
 </div>
 
