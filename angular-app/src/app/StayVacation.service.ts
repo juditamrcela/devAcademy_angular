@@ -17,7 +17,7 @@ export class StayVacationService{
     createAndStoreReservation(reservation:Reservation){
         this.http
         .post<Reservation>
-        ('https://devcademy.herokuapp.com/api/Reservation',reservation)
+        ('https://devcademy.herokuapp.com/api/Reservation',reservation).subscribe()
     }
     fetchAccommodations(){
     
