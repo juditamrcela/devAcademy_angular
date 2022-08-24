@@ -23,12 +23,12 @@
    
     <p *ngIf="locations.length<1 && !isLoading">No locations available</p>
     <div class="row align-items-center mb-5" *ngIf="locations.length>=1  && !isLoading">
-        <div class="col" *ngFor="let location of allLocations" >
+        <div class="col-sm-3 col-md-offset-5 col-xs-12" *ngFor="let location of allLocations" >
             <app-location-box [locationInput]="location" (locationOutput)="onClickedLocation($event)"></app-location-box>
        </div>
 
     </div>
-    <p *ngIf="isLoading">Loading...</p>
+    <p *ngIf="isLoading" style="text-align: center;"><app-loading-spinner></app-loading-spinner></p>
     
 
 </div>

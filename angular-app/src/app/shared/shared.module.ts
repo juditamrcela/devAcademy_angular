@@ -17,7 +17,8 @@ import { FiltersComponent } from './filters/filters.component';
 import { ReservationBoxComponent } from './reservation-box/reservation-box.component';
 import { DeleteConfirmationDailogComponent } from './delete-confirmation-dailog/delete-confirmation-dailog.component'
 import {MatDialogModule} from '@angular/material/dialog';
-import { CreateReservationConfirmationDialogComponent } from './create-reservation-confirmation-dialog/create-reservation-confirmation-dialog.component'
+import { CreateReservationConfirmationDialogComponent } from './create-reservation-confirmation-dialog/create-reservation-confirmation-dialog.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component'
 @NgModule({
   declarations: [
     LocationBoxComponent,
@@ -27,7 +28,8 @@ import { CreateReservationConfirmationDialogComponent } from './create-reservati
     FiltersComponent,
     ReservationBoxComponent,
     DeleteConfirmationDailogComponent,
-    CreateReservationConfirmationDialogComponent
+    CreateReservationConfirmationDialogComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -53,7 +55,8 @@ import { CreateReservationConfirmationDialogComponent } from './create-reservati
     FormsModule,
     MatDatepickerModule,
     FilterPipe,
-    CreateReservationConfirmationDialogComponent
+    CreateReservationConfirmationDialogComponent,
+    LoadingSpinnerComponent
 
   ],
   entryComponents:[MatDialogModule]
