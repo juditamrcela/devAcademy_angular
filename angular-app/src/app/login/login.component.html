@@ -1,0 +1,39 @@
+<body class="login-body">
+    <div class="card" style="width:404px;height:404px; display: center;">
+        <div class="card-body">
+            <h5 class="card-title">Login</h5>
+            <h6 style="font-size: 14px;" class="card-subtitle mb-2 text-muted">Get started for free</h6>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 col-md-offset-3">
+                        <mat-form-field appearance="outline" [style.width.px]=372>
+                            <mat-label for="email">Email</mat-label>
+                            <input matInput type="email" name="email" id="email" ngModel required="true" email>
+                        </mat-form-field>
+                
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 col-md-offset-3">
+                        <mat-form-field appearance="outline" [style.width.px]=372>
+                            <mat-label for="password">Password</mat-label>
+                            <input matInput ngModel name="password" id="password" type="password" required="true" minlength="8">
+                        </mat-form-field>
+            
+                    </div>
+            
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <mat-checkbox type="checkbox" [(ngModel)]="checked" name="terms" required="true" >I accept the Terms and Conditions</mat-checkbox>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="!f.valid"><a>LOG IN</a></button>
+                
+            </form>
+        </div>
+        
+        
+    </div>
+</body>
+

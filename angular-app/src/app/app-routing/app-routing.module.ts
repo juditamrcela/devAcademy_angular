@@ -11,21 +11,24 @@ import { MyAccommodationFormComponent } from 'app/my-accommodation-form/my-accom
 import { PageNotFoundComponent } from 'app/page-not-found/page-not-found.component';
 import { AccomodationDetailsComponent } from 'app/accomodation-details/accomodation-details.component';
 import { BookPlaceFormComponent } from 'app/book-place-form/book-place-form.component';
+import { LoginComponent } from 'app/login/login.component';
+import { AuthGuard } from 'app/login/auth.guard';
 
 
 
 const appRoutes: Routes=[
   { path: '', redirectTo:'home',pathMatch:'full' },
-  {path: 'home',component:HomeComponent},
-  { path: 'locations', component: AllLocationsComponent },
-  {path: 'location',component:LocationComponent},
-  { path: 'myPlaces', component: MyPlacesComponent },
-  { path: 'myBookings', component: MyBookingComponent },
-  {path:'recommendations',component:RecommendationsComponent},
-  {path:'myPlaces/add-new',component:MyAccommodationFormComponent},
-  {path:'myPlaces/edit/:id',component:MyAccommodationFormComponent},
-  {path:'accommodation/:id',component:AccomodationDetailsComponent},
-  {path:'bookPlace/:id',component:BookPlaceFormComponent},
+  {path: 'home',component:HomeComponent,canActivate:[AuthGuard]},
+  {path:'login',component:LoginComponent},
+  { path: 'locations', component: AllLocationsComponent ,canActivate:[AuthGuard]},
+  {path: 'location',component:LocationComponent,canActivate:[AuthGuard]},
+  { path: 'myPlaces', component: MyPlacesComponent,canActivate:[AuthGuard] },
+  { path: 'myBookings', component: MyBookingComponent,canActivate:[AuthGuard] },
+  {path:'recommendations',component:RecommendationsComponent,canActivate:[AuthGuard]},
+  {path:'myPlaces/add-new',component:MyAccommodationFormComponent,canActivate:[AuthGuard]},
+  {path:'myPlaces/edit/:id',component:MyAccommodationFormComponent,canActivate:[AuthGuard]},
+  {path:'accommodation/:id',component:AccomodationDetailsComponent,canActivate:[AuthGuard]},
+  {path:'bookPlace/:id',component:BookPlaceFormComponent,canActivate:[AuthGuard]},
   {path:'not-found',component: PageNotFoundComponent},
   {path:'**',redirectTo:'/not-found'}
   

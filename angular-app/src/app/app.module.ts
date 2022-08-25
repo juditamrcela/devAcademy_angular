@@ -21,7 +21,6 @@ import { AllLocationsComponent } from './all-locations/all-locations.component';
 import {MatSelectModule} from '@angular/material/select';
 
 import {MatInputModule} from '@angular/material/input';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import { MyAccommodationFormComponent } from './my-accommodation-form/my-accommodation-form.component';
@@ -34,6 +33,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgxInputStarRatingModule } from '@ngx-lite/input-star-rating';
 import { MyPlaceBoxComponent } from './my-place-box/my-place-box.component';
 import { BookPlaceFormComponent } from './book-place-form/book-place-form.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './login/auth.guard';
 //import { NgbRatingModule} from '@ng-bootstrap/ng-bootstrap'; 
 
 
@@ -55,7 +57,8 @@ import { BookPlaceFormComponent } from './book-place-form/book-place-form.compon
     LocationComponent,
     PageNotFoundComponent,
     MyPlaceBoxComponent,
-    BookPlaceFormComponent
+    BookPlaceFormComponent,
+    LoginComponent
    
 
   ],
@@ -74,12 +77,14 @@ import { BookPlaceFormComponent } from './book-place-form/book-place-form.compon
     RouterModule,
     ReactiveFormsModule,
     NgxInputStarRatingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCheckboxModule
+
    
     
     
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
   
 })

@@ -4,21 +4,22 @@
     <h5>Upcoming bookings</h5>
     <br>
     <p *ngIf="reservations.length<1 && !isLoading" style="color:red">No accommodations available</p>
-    <div class="row align-items-center " *ngIf="reservations.length>=1 && !isLoading">
+    <div class="row align-items-center mb-5" *ngIf="reservations.length>=1 && !isLoading">
         <div class="col-sm-3" *ngFor="let reservation of reservations ">
             <app-reservation-box [reservationInput]="reservation"></app-reservation-box>
         </div>
         
     </div>
-    <p *ngIf="isLoading">Loading...</p>
+    <p *ngIf="isLoading" style="text-align: center;"><app-loading-spinner></app-loading-spinner></p>
     <h5>Past bookings</h5>
     <br>
     <p *ngIf="reservations.length<1 && !isLoading">No accommodations available</p>
-    <div class="row align-items-center mb-5" > 
-        <div class="col">
-
+    <div class="row align-items-center mb-5" *ngIf="reservations.length>=1 && !isLoading">
+        <div class="col-sm-3" *ngFor="let reservation of reservations ">
+            <app-reservation-box [reservationInput]="reservation"></app-reservation-box>
         </div>
-       
+            
     </div>
+    <p *ngIf="isLoading" style="text-align: center;"><app-loading-spinner></app-loading-spinner></p>
 
 </div>

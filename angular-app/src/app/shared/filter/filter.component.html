@@ -1,9 +1,9 @@
-<div class="container" id="filter" >
+<div id="filter" class="container-fluid py-15">
     <form (ngSubmit)="onFilter(f)" #f="ngForm">
-        <div class="row justify-content-between align-items-start">
+        <div  class="row align-items">
            
-            <div class="col-sm">
-                <mat-form-field appearance="outline">
+            <div class="col-md">
+                <mat-form-field appearance="outline" [style.width.px]=220>
                     <mat-label>Where are you going?</mat-label>
                     <mat-icon matPrefix>airport_shuttle</mat-icon>
                     <mat-select ngModel name="location">
@@ -13,8 +13,8 @@
                 </mat-form-field>
             </div>
                 
-            <div class="col-sm">
-                <mat-form-field appearance="outline">
+            <div class="col-md">
+                <mat-form-field appearance="outline" [style.width.px]=170>
                     <mat-label>Choose a date</mat-label>
                     <input ngModel name="checkIn" placeholder="Select Date" matInput [matDatepicker]="datepicker1">
                         
@@ -23,8 +23,8 @@
                 </mat-form-field>
             </div>
                
-            <div class="col-sm">
-                <mat-form-field appearance="outline">
+            <div class="col-md">
+                <mat-form-field appearance="outline" [style.width.px]=170>
                     <mat-label>Choose a date</mat-label>
                     <input ngModel name="checkOut" placeholder="Select Date" matInput [matDatepicker]="datepicker2">
                         
@@ -33,19 +33,19 @@
                 </mat-form-field>
             </div>
                 
-            <div class="col-sm">
-                <mat-form-field  appearance="outline">
+            <div class="col-md">
+                <mat-form-field  appearance="outline" [style.width.px]=220>
                     <mat-label>How many people?</mat-label>
                     <mat-icon matPrefix>person</mat-icon>
                     <input matInput ngModel type="number" name="personCount">
                 </mat-form-field>
             </div>
                
-            <div class="col-sm">
+            <div class="col-md">
                     <!-- <ng-select class="custom" [(ngModel)]="selectedType">
                     <ng-option *ngFor="let type of types" [value]="type.id">{{type.name}}</ng-option>
                  </ng-select> -->
-                <mat-form-field appearance="outline">
+                <mat-form-field appearance="outline" [style.width.px]=220>
                     <mat-label>What type of accommodation?</mat-label>
                     <mat-icon matPrefix>hotel</mat-icon>
                     <mat-select ngModel name="accommodationType">
@@ -53,11 +53,13 @@
                     </mat-select>
                     
                 </mat-form-field>
+
             </div>
-     
-            <div class="col-sm" id="button" >
+            <div class="col-md" id="button" >
                 <button type="submit" > Search</button>
             </div>
+     
+            
             
         </div>
     </form>

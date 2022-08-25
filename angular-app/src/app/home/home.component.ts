@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +10,13 @@ import { NgForm } from '@angular/forms';
 export class HomeComponent implements OnInit {
  
 
-
-  constructor() { }
+  loggedIn=false;
+  constructor(private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    if(localStorage.length===0){
+      
+    }
   }
   
 

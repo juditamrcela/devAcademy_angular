@@ -1,0 +1,28 @@
+button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+
+    width: 372px;
+    height: 42px;
+}
+.login-body{
+     
+    position: fixed;
+    min-width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../../assets/login_upscaled.png");
+    background-size: 100%;
+    background-size: cover;
+
+}
+.card{
+    
+    display: block;
+    margin-left:auto;
+    margin-right:auto;  
+    margin-top: 200px;
+}
